@@ -7,8 +7,8 @@ import org.fastsped.efdIcmsIpi.model.data.CompanyComplement;
 import org.fastsped.efdIcmsIpi.model.data.OpeningEfd;
 import org.fastsped.util.Profile;
 
+import java.io.File;
 import java.nio.file.Paths;
-import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,9 +21,16 @@ public class Main {
 
         GenerateEfd generateEfd = new GenerateEfdIcmsIpi();
         String pathGenerateSped = Paths.get("sped").toAbsolutePath().toString();
-        System.out.println(pathGenerateSped);
+        System.out.println("\n===========================GENERATE SPED FILE==================================\n");
         generateEfd.generateEfdFileInDirectory(efdIcmsIpi, pathGenerateSped + "/TESTE_EFD_ICMS_IPI.txt");
-
+        System.out.println("\n===========================GENERATE SPED FILE OBJECT=====================================\n");
+        File spedFile = generateEfd.generateEfdToFile(efdIcmsIpi, pathGenerateSped + "/TESTE_EFD_ICMS_FILE_IPI.txt");
+        System.out.println("File " + spedFile.getAbsolutePath());
+        System.out.println("\n=============================GENERATE SPED STRING================================\n");
+        System.out.println(generateEfd.generateEfdString(efdIcmsIpi));
+        System.out.println("=================================GENERATE SPED BYTE[]=============================\n");
+        byte[] spedBytes = generateEfd.generateEfd(efdIcmsIpi);
+        System.out.println(new String(spedBytes));
     }
 
     private static OpeningEfd createOpeningEfd() {
