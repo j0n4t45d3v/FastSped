@@ -1,4 +1,4 @@
-package org.fastsped.util;
+package org.fastsped.commons;
 
 public class BuilderRegister {
     private final StringBuilder register;

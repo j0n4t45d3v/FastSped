@@ -7,7 +7,7 @@ import org.fastsped.efdIcmsIpi.block.registerZero.Register0001;
 import org.fastsped.efdIcmsIpi.block.registerZero.Register0002;
 import org.fastsped.efdIcmsIpi.block.registerZero.Register0005;
 import org.fastsped.efdIcmsIpi.model.EfdIcmsIpi;
-import org.fastsped.util.Index;
+import org.fastsped.commons.Index;
 
 /**
  * Class representation block zero in the EFD Icms Ipi.

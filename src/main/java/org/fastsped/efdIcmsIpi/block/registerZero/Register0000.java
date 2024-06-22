@@ -2,7 +2,7 @@ package org.fastsped.efdIcmsIpi.block.registerZero;
 
 import org.fastsped.efdIcmsIpi.block.interfaces.Register;
 import org.fastsped.efdIcmsIpi.model.EfdIcmsIpi;
-import org.fastsped.util.BuilderRegister;
+import org.fastsped.commons.BuilderRegister;
 
 /**
 * Class: Register0000.

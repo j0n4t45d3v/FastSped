@@ -5,7 +5,7 @@ import org.fastsped.efdIcmsIpi.GenerateEfdIcmsIpi;
 import org.fastsped.efdIcmsIpi.model.EfdIcmsIpi;
 import org.fastsped.efdIcmsIpi.model.data.CompanyComplement;
 import org.fastsped.efdIcmsIpi.model.data.OpeningEfd;
-import org.fastsped.util.Profile;
+import org.fastsped.commons.Profile;
 
 import java.io.File;
 import java.nio.file.Paths;

@@ -2,7 +2,7 @@ package org.fastsped.efdIcmsIpi.model;
 
 import org.fastsped.efdIcmsIpi.model.data.CompanyComplement;
 import org.fastsped.efdIcmsIpi.model.data.OpeningEfd;
-import org.fastsped.util.Profile;
+import org.fastsped.commons.Profile;
 
 /**
  * Model responsible to storing the data necessary to generate the EFD ICMS IPI.

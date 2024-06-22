@@ -1,4 +1,4 @@
-package org.fastsped.util;
+package org.fastsped.commons;
 
 public enum Profile {
     A("A"), B("B"), C("C");

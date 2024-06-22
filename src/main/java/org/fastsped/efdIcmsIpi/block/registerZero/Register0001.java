@@ -1,8 +1,8 @@
 package org.fastsped.efdIcmsIpi.block.registerZero;
 
 import org.fastsped.efdIcmsIpi.block.interfaces.Register;
-import org.fastsped.util.BuilderRegister;
-import org.fastsped.util.Index;
+import org.fastsped.commons.BuilderRegister;
+import org.fastsped.commons.Index;
 
 public class Register0001 implements Register {
     private Index index;
