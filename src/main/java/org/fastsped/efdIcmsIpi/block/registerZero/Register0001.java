@@ -5,7 +5,7 @@ import org.fastsped.commons.BuilderRegister;
 import org.fastsped.commons.Index;
 
 public class Register0001 implements Register {
-    private Index index;
+    private final Index index;
 
     public Register0001(Index index) {
         this.index = index;
