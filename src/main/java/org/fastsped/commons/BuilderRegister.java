@@ -13,6 +13,9 @@ public class BuilderRegister {
     }
 
     public BuilderRegister add(String value) {
+        if(value == null) {
+            value = "";
+        }
         this.register.append(value).append("|");
         return this;
     }
