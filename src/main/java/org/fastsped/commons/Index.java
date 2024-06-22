@@ -1,4 +1,4 @@
-package org.fastsped.util;
+package org.fastsped.commons;
 
 public enum Index {
     CONTENT(0), NOT_CONTENT(1);

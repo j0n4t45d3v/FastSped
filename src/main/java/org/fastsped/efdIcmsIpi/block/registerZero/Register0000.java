@@ -1,8 +1,9 @@
 package org.fastsped.efdIcmsIpi.block.registerZero;
 
 import org.fastsped.efdIcmsIpi.block.interfaces.Register;
+import org.fastsped.efdIcmsIpi.exceptions.CnpjAndCpfIsNullException;
 import org.fastsped.efdIcmsIpi.model.EfdIcmsIpi;
-import org.fastsped.util.BuilderRegister;
+import org.fastsped.commons.BuilderRegister;
 
 /**
 * Class: Register0000.
@@ -45,6 +46,9 @@ public class Register0000 implements Register {
 
     @Override
     public String generateRegister() {
+        if(this.cnpj == null && this.cpf == null){
+            throw new CnpjAndCpfIsNullException();
+        }
         return BuilderRegister.builder("0000")
                 .add(codVer).add(codFin)
                 .add(dtIni).add(dtFin)

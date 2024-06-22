@@ -2,12 +2,9 @@ package org.fastsped.efdIcmsIpi.block;
 
 import org.fastsped.efdIcmsIpi.block.interfaces.Block;
 import org.fastsped.efdIcmsIpi.block.interfaces.Register;
-import org.fastsped.efdIcmsIpi.block.registerZero.Register0000;
-import org.fastsped.efdIcmsIpi.block.registerZero.Register0001;
-import org.fastsped.efdIcmsIpi.block.registerZero.Register0002;
-import org.fastsped.efdIcmsIpi.block.registerZero.Register0005;
+import org.fastsped.efdIcmsIpi.block.registerZero.*;
 import org.fastsped.efdIcmsIpi.model.EfdIcmsIpi;
-import org.fastsped.util.Index;
+import org.fastsped.commons.Index;
 
 /**
  * Class representation block zero in the EFD Icms Ipi.
@@ -36,6 +33,7 @@ public class BlockZero implements Block {
         block.append(this.generateRegister0000());
         block.append(this.generateRegister0001());
         block.append(this.generateRegister0005());
+        block.append(this.generateRegister0100());
         return block.toString().getBytes();
     }
 
@@ -56,6 +54,11 @@ public class BlockZero implements Block {
 
     private String generateRegister0005() {
         Register register = new Register0005(this.efdIcmsIpi.getCompanyComplement());
+        return this.generateRegister(register);
+    }
+
+    private String generateRegister0100() {
+        Register register = new Register0100(this.efdIcmsIpi.getAccountant());
         return this.generateRegister(register);
     }
 

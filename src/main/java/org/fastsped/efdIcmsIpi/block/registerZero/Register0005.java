@@ -2,7 +2,7 @@ package org.fastsped.efdIcmsIpi.block.registerZero;
 
 import org.fastsped.efdIcmsIpi.block.interfaces.Register;
 import org.fastsped.efdIcmsIpi.model.data.CompanyComplement;
-import org.fastsped.util.BuilderRegister;
+import org.fastsped.commons.BuilderRegister;
 
 public class Register0005 implements Register {
     private CompanyComplement companyComplement;

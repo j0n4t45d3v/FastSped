@@ -8,7 +8,7 @@ public interface GenerateEfd {
 
     byte[] generateEfd(EfdIcmsIpi efdIcmsIpi);
     String generateEfdString(EfdIcmsIpi efdIcmsIpi);
-    File generateEfdToFile(EfdIcmsIpi efdIcmsIpi);
+    File generateEfdToFile(EfdIcmsIpi efdIcmsIpi,  String path);
     void generateEfdFileInDirectory(EfdIcmsIpi efdIcmsIpi, String path);
 
 }

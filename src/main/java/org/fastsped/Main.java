@@ -3,27 +3,37 @@ package org.fastsped;
 import org.fastsped.efdIcmsIpi.GenerateEfd;
 import org.fastsped.efdIcmsIpi.GenerateEfdIcmsIpi;
 import org.fastsped.efdIcmsIpi.model.EfdIcmsIpi;
+import org.fastsped.efdIcmsIpi.model.data.Accountant;
 import org.fastsped.efdIcmsIpi.model.data.CompanyComplement;
 import org.fastsped.efdIcmsIpi.model.data.OpeningEfd;
-import org.fastsped.util.Profile;
+import org.fastsped.commons.Profile;
 
+import java.io.File;
 import java.nio.file.Paths;
-import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) {
         OpeningEfd opening = createOpeningEfd();
         CompanyComplement companyComplement = createCompanyComplement();
+        Accountant accountant = createAccountant();
         EfdIcmsIpi efdIcmsIpi = new EfdIcmsIpi();
         efdIcmsIpi.setOpeningEfd(opening);
         efdIcmsIpi.setCompanyComplement(companyComplement);
+        efdIcmsIpi.setAccountant(accountant);
         efdIcmsIpi.setProfile(Profile.A);
 
         GenerateEfd generateEfd = new GenerateEfdIcmsIpi();
         String pathGenerateSped = Paths.get("sped").toAbsolutePath().toString();
-        System.out.println(pathGenerateSped);
+        System.out.println("\n===========================GENERATE SPED FILE==================================\n");
         generateEfd.generateEfdFileInDirectory(efdIcmsIpi, pathGenerateSped + "/TESTE_EFD_ICMS_IPI.txt");
-
+        System.out.println("\n===========================GENERATE SPED FILE OBJECT=====================================\n");
+        File spedFile = generateEfd.generateEfdToFile(efdIcmsIpi, pathGenerateSped + "/TESTE_EFD_ICMS_FILE_IPI.txt");
+        System.out.println("File " + spedFile.getAbsolutePath());
+        System.out.println("\n=============================GENERATE SPED STRING================================\n");
+        System.out.println(generateEfd.generateEfdString(efdIcmsIpi));
+        System.out.println("=================================GENERATE SPED BYTE[]=============================\n");
+        byte[] spedBytes = generateEfd.generateEfd(efdIcmsIpi);
+        System.out.println(new String(spedBytes));
     }
 
     private static OpeningEfd createOpeningEfd() {
@@ -57,5 +67,22 @@ public class Main {
         companyComplement.setFax("1234567890");
         companyComplement.setEmail("empresa@teste");
         return companyComplement;
+    }
+
+    private static Accountant createAccountant() {
+        Accountant accountant = new Accountant();
+        accountant.setName("Contador TESTE");
+        accountant.setCpf("12345678901");
+        accountant.setCrc("123456789012");
+        accountant.setCep("12345678");
+        accountant.setEnd("RUA TESTE");
+        accountant.setNum("123");
+        accountant.setCompl("AP 123");
+        accountant.setBairro("BAIRRO TESTE");
+        accountant.setFone("1234567890");
+        accountant.setFax("1234567890");
+        accountant.setEmail("empresa@teste");
+        accountant.setCodMun("1234567");
+        return accountant;
     }
 }

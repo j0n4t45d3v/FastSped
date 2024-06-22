@@ -3,10 +3,7 @@ package org.fastsped.efdIcmsIpi;
 import org.fastsped.efdIcmsIpi.block.BlockZero;
 import org.fastsped.efdIcmsIpi.model.EfdIcmsIpi;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -16,17 +13,32 @@ public class GenerateEfdIcmsIpi implements GenerateEfd{
 
     @Override
     public byte[] generateEfd(EfdIcmsIpi efdIcmsIpi) {
-        return new byte[0];
+        try {
+            return this.generateBlocks(efdIcmsIpi);
+        } catch (IOException e) {
+            throw new RuntimeException("Fail generate blocks.",e);
+        }
     }
 
     @Override
     public String generateEfdString(EfdIcmsIpi efdIcmsIpi) {
-        return "";
+        try {
+            return new String(this.generateBlocks(efdIcmsIpi));
+        } catch (IOException e) {
+            throw new RuntimeException("Fail generate blocks.",e);
+        }
     }
 
     @Override
-    public File generateEfdToFile(EfdIcmsIpi efdIcmsIpi) {
-        return null;
+    public File generateEfdToFile(EfdIcmsIpi efdIcmsIpi,  String path) {
+        File file = new File(path);
+
+        try (FileWriter writer = new FileWriter(file)) {
+            writer.append(new String(this.generateBlocks(efdIcmsIpi)));
+            return file;
+        } catch (IOException e) {
+            throw new RuntimeException("Fail writing file.", e);
+        }
     }
 
     @Override
@@ -43,7 +55,7 @@ public class GenerateEfdIcmsIpi implements GenerateEfd{
             spedFisicFile.write(spedBytes);
             System.out.println("File generated with success in path: " + path);
         }catch (IOException e){
-            e.printStackTrace();
+            throw new RuntimeException("Fail generating file.", e);
         }
     }
 
@@ -51,7 +63,6 @@ public class GenerateEfdIcmsIpi implements GenerateEfd{
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         BlockZero blockZero = new BlockZero(efdIcmsIpi);
         outputStream.write(blockZero.generateBlock());
-        
         return outputStream.toByteArray();
     }
 }

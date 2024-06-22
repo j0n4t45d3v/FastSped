@@ -1,4 +1,4 @@
-package org.fastsped.util;
+package org.fastsped.commons;
 
 import org.fastsped.efdIcmsIpi.model.EfdIcmsIpi;
 

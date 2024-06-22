@@ -1,4 +1,4 @@
-package org.fastsped.util;
+package org.fastsped.commons;
 
 public class BuilderRegister {
     private final StringBuilder register;
@@ -13,6 +13,9 @@ public class BuilderRegister {
     }
 
     public BuilderRegister add(String value) {
+        if(value == null) {
+            value = "";
+        }
         this.register.append(value).append("|");
         return this;
     }
