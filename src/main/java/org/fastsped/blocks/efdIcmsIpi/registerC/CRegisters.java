@@ -6,6 +6,7 @@ import org.fastsped.interfaces.Register;
 import org.fastsped.interfaces.RegisterFactory;
 import org.fastsped.model.EfdIcmsIpi;
 import org.fastsped.model.data.Invoice;
+import org.fastsped.model.data.InvoiceItem;
 
 import java.util.List;
 
@@ -28,7 +29,12 @@ public class CRegisters implements RegisterFactory {
 
         registersGenerated.append(this.generateRegisterC001(invoices.isEmpty()));
         for(Invoice invoice : invoices) {
+            int numItem = 0;
             registersGenerated.append(this.generateRegisterC100(invoice));
+            for (InvoiceItem item : invoice.getInvoiceItems()) {
+                registersGenerated.append(this.generateRegisterC170(item, numItem));
+                numItem++;
+            }
         }
         registersGenerated.append(this.closeRegister("C", this.quantity));
         return registersGenerated.toString();
@@ -37,12 +43,23 @@ public class CRegisters implements RegisterFactory {
     private String generateRegisterC001(boolean blockIsEmpty) {
         Index index = blockIsEmpty ? NOT_CONTENT : CONTENT;
         Register register = new RegisterC001(index);
+        this.addLineInQuantity(register);
         return RegisterUtil.generateRegister(register);
     }
 
     private String generateRegisterC100(Invoice invoice) {
         Register register = new RegisterC100(invoice);
-        this.quantity += register.getQuantityLines();
+        this.addLineInQuantity(register);
         return RegisterUtil.generateRegister(register);
+    }
+
+    private String generateRegisterC170(InvoiceItem item, int numItem) {
+        Register register = new RegisterC170(item, numItem);
+        this.addLineInQuantity(register);
+        return RegisterUtil.generateRegister(register);
+    }
+
+    private void addLineInQuantity(Register register) {
+        this.quantity += register.getQuantityLines();
     }
 }

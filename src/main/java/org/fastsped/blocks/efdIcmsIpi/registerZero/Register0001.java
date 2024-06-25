@@ -14,7 +14,7 @@ public class Register0001 implements Register {
     @Override
     public String generateRegister() {
         return BuilderRegister.builder("0001")
-                .add(String.valueOf(index.getIndex()))
+                .add(this.index)
                 .build();
     }
 

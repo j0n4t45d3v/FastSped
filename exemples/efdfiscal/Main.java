@@ -86,8 +86,9 @@ public class Main {
     }
 
     private static List<Invoice> createInvoices() {
+        //1 = UN, 2 = KG
         InvoiceItem item1 = new InvoiceItem(
-                "001", "Item 1 description", "10", "UN", new BigDecimal("100.00"), new BigDecimal("10.00"), "1",
+                "001", "Item 1 description", "10", 1, new BigDecimal("100.00"), new BigDecimal("10.00"), "1",
                 "00", "5102", "1001", new BigDecimal("90.00"), new BigDecimal("18.00"), new BigDecimal("16.20"),
                 new BigDecimal("80.00"), new BigDecimal("18.00"), new BigDecimal("14.40"), "0", "50", "001",
                 new BigDecimal("80.00"), new BigDecimal("10.00"), new BigDecimal("8.00"), "01", new BigDecimal("80.00"),
@@ -97,7 +98,7 @@ public class Main {
         );
 
         InvoiceItem item2 = new InvoiceItem(
-                "002", "Item 2 description", "20", "KG", new BigDecimal("200.00"), new BigDecimal("20.00"), "0",
+                "002", "Item 2 description", "20", 2, new BigDecimal("200.00"), new BigDecimal("20.00"), "0",
                 "10", "6102", "2001", new BigDecimal("180.00"), new BigDecimal("17.00"), new BigDecimal("30.60"),
                 new BigDecimal("150.00"), new BigDecimal("17.00"), new BigDecimal("25.50"), "1", "49", "002",
                 new BigDecimal("150.00"), new BigDecimal("15.00"), new BigDecimal("22.50"), "02", new BigDecimal("150.00"),

@@ -6,7 +6,7 @@ public class InvoiceItem {
     private String codItem;
     private String descrCompl;
     private String quant;
-    private String unid;
+    private int unid;
     private BigDecimal vlItem;
     private BigDecimal vlDesc;
     private String indMov;
@@ -41,7 +41,7 @@ public class InvoiceItem {
     private BigDecimal vlAbatNt;
 
     public InvoiceItem(
-            String codItem, String descrCompl, String quant, String unid, BigDecimal vlItem,
+            String codItem, String descrCompl, String quant, int unid, BigDecimal vlItem,
             BigDecimal vlDesc, String indMov, String cstIcms, String cfop, String codNat,
             BigDecimal vlBcIcms, BigDecimal alqIcms, BigDecimal vlIcms, BigDecimal vlBcIcmsSt,
             BigDecimal alqIcmsSt, BigDecimal vlIcmsSt, String indApur, String cstIpi,
@@ -114,10 +114,10 @@ public class InvoiceItem {
     }
 
     public String getUnid() {
-        return unid;
+        return String.valueOf(unid);
     }
 
-    public void setUnid(String unid) {
+    public void setUnid(int unid) {
         this.unid = unid;
     }
 
