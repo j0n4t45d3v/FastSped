@@ -1,14 +1,15 @@
-package org.fastsped.efdIcmsIpi;
+package org.fastsped;
 
-import org.fastsped.efdIcmsIpi.block.BlockZero;
-import org.fastsped.efdIcmsIpi.model.EfdIcmsIpi;
+import org.fastsped.blocks.efdIcmsIpi.BlockZero;
+import org.fastsped.interfaces.GenerateEfd;
+import org.fastsped.model.EfdIcmsIpi;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class GenerateEfdIcmsIpi implements GenerateEfd{
+public class EFDIcmsIpi implements GenerateEfd {
 
 
     @Override

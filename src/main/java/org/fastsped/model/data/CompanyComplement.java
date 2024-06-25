@@ -1,4 +1,4 @@
-package org.fastsped.efdIcmsIpi.model.data;
+package org.fastsped.model.data;
 
 public class CompanyComplement {
     private String fantasia;

@@ -1,8 +1,8 @@
-package org.fastsped.efdIcmsIpi.block.registerZero;
+package org.fastsped.blocks.efdIcmsIpi.registerZero;
 
-import org.fastsped.efdIcmsIpi.block.interfaces.Register;
-import org.fastsped.efdIcmsIpi.exceptions.CnpjAndCpfIsNullException;
-import org.fastsped.efdIcmsIpi.model.EfdIcmsIpi;
+import org.fastsped.exceptions.CnpjAndCpfIsNullException;
+import org.fastsped.model.EfdIcmsIpi;
+import org.fastsped.interfaces.Register;
 import org.fastsped.commons.BuilderRegister;
 
 /**

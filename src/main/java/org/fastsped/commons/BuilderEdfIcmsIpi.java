@@ -1,6 +1,6 @@
 package org.fastsped.commons;
 
-import org.fastsped.efdIcmsIpi.model.EfdIcmsIpi;
+import org.fastsped.model.EfdIcmsIpi;
 
 public class BuilderEdfIcmsIpi {
     private EfdIcmsIpi efdIcmsIpi;

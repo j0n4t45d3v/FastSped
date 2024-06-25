@@ -1,6 +1,6 @@
-package org.fastsped.efdIcmsIpi;
+package org.fastsped.interfaces;
 
-import org.fastsped.efdIcmsIpi.model.EfdIcmsIpi;
+import org.fastsped.model.EfdIcmsIpi;
 
 import java.io.File;
 

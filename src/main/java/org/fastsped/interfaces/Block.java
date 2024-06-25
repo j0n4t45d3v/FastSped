@@ -1,4 +1,4 @@
-package org.fastsped.efdIcmsIpi.block.interfaces;
+package org.fastsped.interfaces;
 
 public interface Block {
 

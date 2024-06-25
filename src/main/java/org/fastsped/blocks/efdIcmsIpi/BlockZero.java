@@ -1,9 +1,9 @@
-package org.fastsped.efdIcmsIpi.block;
+package org.fastsped.blocks.efdIcmsIpi;
 
-import org.fastsped.efdIcmsIpi.block.interfaces.Block;
-import org.fastsped.efdIcmsIpi.block.interfaces.Register;
-import org.fastsped.efdIcmsIpi.block.registerZero.*;
-import org.fastsped.efdIcmsIpi.model.EfdIcmsIpi;
+import org.fastsped.interfaces.Block;
+import org.fastsped.interfaces.Register;
+import org.fastsped.model.EfdIcmsIpi;
+import org.fastsped.blocks.efdIcmsIpi.registerZero.*;
 import org.fastsped.commons.Index;
 
 /**

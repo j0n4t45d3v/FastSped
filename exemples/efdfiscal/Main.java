@@ -1,12 +1,12 @@
-package org.fastsped;
+package efdfiscal;
 
-import org.fastsped.efdIcmsIpi.GenerateEfd;
-import org.fastsped.efdIcmsIpi.GenerateEfdIcmsIpi;
-import org.fastsped.efdIcmsIpi.model.EfdIcmsIpi;
-import org.fastsped.efdIcmsIpi.model.data.Accountant;
-import org.fastsped.efdIcmsIpi.model.data.CompanyComplement;
-import org.fastsped.efdIcmsIpi.model.data.OpeningEfd;
 import org.fastsped.commons.Profile;
+import org.fastsped.interfaces.GenerateEfd;
+import org.fastsped.EFDIcmsIpi;
+import org.fastsped.model.EfdIcmsIpi;
+import org.fastsped.model.data.Accountant;
+import org.fastsped.model.data.CompanyComplement;
+import org.fastsped.model.data.OpeningEfd;
 
 import java.io.File;
 import java.nio.file.Paths;
@@ -22,7 +22,7 @@ public class Main {
         efdIcmsIpi.setAccountant(accountant);
         efdIcmsIpi.setProfile(Profile.A);
 
-        GenerateEfd generateEfd = new GenerateEfdIcmsIpi();
+        GenerateEfd generateEfd = new EFDIcmsIpi();
         String pathGenerateSped = Paths.get("sped").toAbsolutePath().toString();
         System.out.println("\n===========================GENERATE SPED FILE==================================\n");
         generateEfd.generateEfdFileInDirectory(efdIcmsIpi, pathGenerateSped + "/TESTE_EFD_ICMS_IPI.txt");

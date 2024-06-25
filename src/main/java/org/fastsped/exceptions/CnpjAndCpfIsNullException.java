@@ -1,4 +1,4 @@
-package org.fastsped.efdIcmsIpi.exceptions;
+package org.fastsped.exceptions;
 
 public class CnpjAndCpfIsNullException extends RuntimeException{
     public CnpjAndCpfIsNullException() {

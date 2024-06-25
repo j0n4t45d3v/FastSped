@@ -1,8 +1,8 @@
-package org.fastsped.efdIcmsIpi.model;
+package org.fastsped.model;
 
-import org.fastsped.efdIcmsIpi.model.data.Accountant;
-import org.fastsped.efdIcmsIpi.model.data.CompanyComplement;
-import org.fastsped.efdIcmsIpi.model.data.OpeningEfd;
+import org.fastsped.model.data.Accountant;
+import org.fastsped.model.data.CompanyComplement;
+import org.fastsped.model.data.OpeningEfd;
 import org.fastsped.commons.Profile;
 
 /**

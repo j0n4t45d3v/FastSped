@@ -1,6 +1,6 @@
-package org.fastsped.efdIcmsIpi.block.registerZero;
+package org.fastsped.blocks.efdIcmsIpi.registerZero;
 
-import org.fastsped.efdIcmsIpi.block.interfaces.Register;
+import org.fastsped.interfaces.Register;
 import org.fastsped.commons.BuilderRegister;
 
 public class Register0002 implements Register {
