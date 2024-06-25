@@ -2,7 +2,7 @@ package efdfiscal;
 
 import org.fastsped.commons.Profile;
 import org.fastsped.interfaces.GenerateEfd;
-import org.fastsped.EFDIcmsIpi;
+import org.fastsped.EFDIcmsIpiGenerate;
 import org.fastsped.model.EfdIcmsIpi;
 import org.fastsped.model.data.Accountant;
 import org.fastsped.model.data.CompanyComplement;
@@ -22,7 +22,7 @@ public class Main {
         efdIcmsIpi.setAccountant(accountant);
         efdIcmsIpi.setProfile(Profile.A);
 
-        GenerateEfd generateEfd = new EFDIcmsIpi();
+        GenerateEfd generateEfd = new EFDIcmsIpiGenerate();
         String pathGenerateSped = Paths.get("sped").toAbsolutePath().toString();
         System.out.println("\n===========================GENERATE SPED FILE==================================\n");
         generateEfd.generateEfdFileInDirectory(efdIcmsIpi, pathGenerateSped + "/TESTE_EFD_ICMS_IPI.txt");
