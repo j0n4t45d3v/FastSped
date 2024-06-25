@@ -20,7 +20,7 @@ public class Register0002 implements Register {
 
     @Override
     public int getQuantityLines() {
-        return 0;
+        return 1;
     }
 
     public String getClasEstabInd() {

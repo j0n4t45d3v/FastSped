@@ -62,7 +62,7 @@ public class Register0000 implements Register {
 
     @Override
     public int getQuantityLines() {
-        return 0;
+        return 1;
     }
 
     public String getCodVer() {

@@ -31,7 +31,7 @@ public class Register0100 implements Register {
 
     @Override
     public int getQuantityLines() {
-        return 0;
+        return 1;
     }
 
     public Accountant getAccountant() {

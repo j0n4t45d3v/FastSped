@@ -30,7 +30,7 @@ public class Register0005 implements Register {
 
     @Override
     public int getQuantityLines() {
-        return 0;
+        return 1;
     }
 
     public CompanyComplement getCompanyComplement() {

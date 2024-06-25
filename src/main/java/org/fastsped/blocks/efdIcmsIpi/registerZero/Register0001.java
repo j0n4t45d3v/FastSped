@@ -20,6 +20,6 @@ public class Register0001 implements Register {
 
     @Override
     public int getQuantityLines() {
-        return 0;
+        return 1;
     }
 }
