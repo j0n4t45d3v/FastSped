@@ -1,7 +1,6 @@
 package org.fastsped;
 
-import org.fastsped.blocks.efdIcmsIpi.BlockC;
-import org.fastsped.blocks.efdIcmsIpi.BlockZero;
+import org.fastsped.blocks.efdIcmsIpi.*;
 import org.fastsped.interfaces.Block;
 import org.fastsped.interfaces.GenerateEfd;
 import org.fastsped.model.EfdIcmsIpi;
@@ -65,10 +64,26 @@ public class EFDIcmsIpiGenerate implements GenerateEfd {
     private byte[] generateBlocks(EfdIcmsIpi efdIcmsIpi) throws IOException {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         Block blockZero = new BlockZero(efdIcmsIpi);
+        Block blockB = new BlockB();
         Block blockC = new BlockC(efdIcmsIpi);
+        Block blockD = new BlockD();
+        Block blockE = new BlockE();
+        Block blockG = new BlockG();
+        Block blockH = new BlockH();
+        Block blockK = new BlockK();
+        Block blockOne = new BlockOne();
+        Block blockNine = new BlockNine();
 
         this.writeBytes(blockZero, outputStream);
+        this.writeBytes(blockB, outputStream);
         this.writeBytes(blockC, outputStream);
+        this.writeBytes(blockD, outputStream);
+        this.writeBytes(blockE, outputStream);
+        this.writeBytes(blockG, outputStream);
+        this.writeBytes(blockH, outputStream);
+        this.writeBytes(blockK, outputStream);
+        this.writeBytes(blockOne, outputStream);
+        this.writeBytes(blockNine, outputStream);
 
         return outputStream.toByteArray();
     }
