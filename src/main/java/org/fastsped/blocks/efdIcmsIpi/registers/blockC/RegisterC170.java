@@ -1,9 +1,8 @@
-package org.fastsped.blocks.efdIcmsIpi.registerC;
+package org.fastsped.blocks.efdIcmsIpi.registers.blockC;
 
 import org.fastsped.commons.BuilderRegister;
 import org.fastsped.commons.EFDFormatter;
 import org.fastsped.interfaces.Register;
-import org.fastsped.model.data.Invoice;
 import org.fastsped.model.data.InvoiceItem;
 
 public class RegisterC170 implements Register {

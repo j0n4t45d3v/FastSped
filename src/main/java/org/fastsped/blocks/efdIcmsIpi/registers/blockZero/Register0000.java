@@ -1,4 +1,4 @@
-package org.fastsped.blocks.efdIcmsIpi.registerZero;
+package org.fastsped.blocks.efdIcmsIpi.registers.blockZero;
 
 import org.fastsped.exceptions.CnpjAndCpfIsNullException;
 import org.fastsped.model.EfdIcmsIpi;

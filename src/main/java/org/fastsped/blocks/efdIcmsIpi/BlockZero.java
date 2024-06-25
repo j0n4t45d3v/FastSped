@@ -1,6 +1,6 @@
 package org.fastsped.blocks.efdIcmsIpi;
 
-import org.fastsped.blocks.efdIcmsIpi.registerZero.ZeroRegisters;
+import org.fastsped.blocks.efdIcmsIpi.registers.blockZero.ZeroRegisters;
 import org.fastsped.interfaces.Block;
 import org.fastsped.interfaces.RegisterFactory;
 import org.fastsped.model.EfdIcmsIpi;

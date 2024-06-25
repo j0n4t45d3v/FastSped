@@ -1,4 +1,4 @@
-package org.fastsped.blocks.efdIcmsIpi.registerZero;
+package org.fastsped.blocks.efdIcmsIpi.registers.blockZero;
 
 import org.fastsped.model.data.Accountant;
 import org.fastsped.commons.BuilderRegister;

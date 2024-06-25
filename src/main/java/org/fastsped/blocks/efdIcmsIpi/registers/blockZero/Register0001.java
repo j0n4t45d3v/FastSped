@@ -1,21 +1,19 @@
-package org.fastsped.blocks.efdIcmsIpi.registerC;
+package org.fastsped.blocks.efdIcmsIpi.registers.blockZero;
 
-import org.fastsped.commons.BuilderRegister;
-import org.fastsped.commons.EFDFormatter;
-import org.fastsped.commons.Index;
 import org.fastsped.interfaces.Register;
-import org.fastsped.model.data.Invoice;
+import org.fastsped.commons.BuilderRegister;
+import org.fastsped.commons.Index;
 
-public class RegisterC001 implements Register {
+public class Register0001 implements Register {
     private final Index index;
 
-    public RegisterC001(Index index) {
+    public Register0001(Index index) {
         this.index = index;
     }
 
     @Override
     public String generateRegister() {
-        return BuilderRegister.builder("C001")
+        return BuilderRegister.builder("0001")
                 .add(this.index)
                 .build();
     }

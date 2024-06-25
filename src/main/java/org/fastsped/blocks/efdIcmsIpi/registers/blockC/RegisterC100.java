@@ -1,4 +1,4 @@
-package org.fastsped.blocks.efdIcmsIpi.registerC;
+package org.fastsped.blocks.efdIcmsIpi.registers.blockC;
 
 import org.fastsped.commons.BuilderRegister;
 import org.fastsped.commons.EFDFormatter;

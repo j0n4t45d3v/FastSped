@@ -1,4 +1,4 @@
-package org.fastsped.blocks.efdIcmsIpi.registerC;
+package org.fastsped.blocks.efdIcmsIpi.registers.blockC;
 
 import org.fastsped.commons.Index;
 import org.fastsped.commons.RegisterUtil;
