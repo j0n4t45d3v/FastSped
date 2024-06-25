@@ -1,6 +1,7 @@
 package org.fastsped.blocks.efdIcmsIpi;
 
 import org.fastsped.blocks.efdIcmsIpi.registers.blockC.CRegisters;
+import org.fastsped.commons.BlockUtil;
 import org.fastsped.interfaces.Block;
 import org.fastsped.interfaces.RegisterFactory;
 import org.fastsped.model.EfdIcmsIpi;
@@ -17,8 +18,7 @@ public class BlockC implements Block {
     public byte[] generateBlock() {
         RegisterFactory factory = new CRegisters(this.efdIcmsIpi);
         String[] regs = {};
-        String block = factory.getRegisters(regs);
-        return block.getBytes();
+        return BlockUtil.generateBlock(factory, regs);
     }
 
     @Override

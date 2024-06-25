@@ -1,6 +1,7 @@
 package org.fastsped.blocks.efdIcmsIpi;
 
 import org.fastsped.blocks.efdIcmsIpi.registers.blockZero.ZeroRegisters;
+import org.fastsped.commons.BlockUtil;
 import org.fastsped.interfaces.Block;
 import org.fastsped.interfaces.RegisterFactory;
 import org.fastsped.model.EfdIcmsIpi;
@@ -30,8 +31,7 @@ public class BlockZero implements Block {
     public byte[] generateBlock() {
         RegisterFactory factory = new ZeroRegisters(this.efdIcmsIpi);
         String[] regs = {"0002"};
-        String block = factory.getRegisters(regs);
-        return block.getBytes();
+        return BlockUtil.generateBlock(factory, regs);
     }
 
     @Override
