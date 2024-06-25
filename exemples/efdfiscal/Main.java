@@ -9,6 +9,7 @@ import org.fastsped.model.data.*;
 import java.io.File;
 import java.math.BigDecimal;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -115,7 +116,7 @@ public class Main {
                 new BigDecimal("30.00"), new BigDecimal("900.00"), new BigDecimal("180.00"),
                 new BigDecimal("100.00"), new BigDecimal("20.00"), new BigDecimal("10.00"),
                 new BigDecimal("15.00"), new BigDecimal("5.00"), new BigDecimal("3.00"),
-                new BigDecimal("2.00"), List.of(item1, item2)
+                new BigDecimal("2.00"), Arrays.asList(item1, item2)
         );
 
         Invoice invoice2 = new Invoice(
@@ -126,9 +127,9 @@ public class Main {
                 new BigDecimal("40.00"), new BigDecimal("1700.00"), new BigDecimal("340.00"),
                 new BigDecimal("200.00"), new BigDecimal("40.00"), new BigDecimal("20.00"),
                 new BigDecimal("30.00"), new BigDecimal("10.00"), new BigDecimal("5.00"),
-                new BigDecimal("3.00"), List.of(item1, item2)
+                new BigDecimal("3.00"), Arrays.asList(item1, item2)
         );
 
-        return List.of(invoice1, invoice2);
+        return Arrays.asList(invoice1, invoice2);
     }
 }

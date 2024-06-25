@@ -2,7 +2,7 @@ package org.fastsped.commons;
 
 import org.fastsped.interfaces.Register;
 
-import java.util.List;
+import java.util.Arrays;
 
 public class RegisterUtil {
     public static String generateRegister(Register register) {
@@ -10,6 +10,6 @@ public class RegisterUtil {
     }
 
     public static boolean containRegister(String[] registersValid, String register) {
-        return List.of(registersValid).contains(register);
+        return Arrays.asList(registersValid).contains(register);
     }
 }
