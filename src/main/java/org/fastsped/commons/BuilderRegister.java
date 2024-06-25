@@ -12,6 +12,12 @@ public class BuilderRegister {
         return new BuilderRegister(registerFormatted);
     }
 
+    public BuilderRegister add(Index index) {
+        String indexToString = String.valueOf(index.getIndex());
+        this.register.append(indexToString).append("|");
+        return this;
+    }
+
     public BuilderRegister add(String value) {
         if(value == null) {
             value = "";
