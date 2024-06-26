@@ -51,7 +51,7 @@ public class NineRegister implements RegisterFactory {
         }
 
         String reg9001Quantity = this.generateRegister9900("9001", 1);
-        String reg9900Quantity = this.generateRegister9900("9900", this.quantityRegs.get("9900") + 4);
+        String reg9900Quantity = this.generateRegister9900("9900", this.quantityRegs.get("9900") + 3);
         String reg9990Quantity = this.generateRegister9900("9990", 1);
         String reg9999Quantity = this.generateRegister9900("9999", 1);
         registersGenerated.append(reg9001Quantity);
