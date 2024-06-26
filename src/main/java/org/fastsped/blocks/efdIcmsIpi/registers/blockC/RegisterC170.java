@@ -50,10 +50,12 @@ public class RegisterC170 implements Register {
                 .add(this.invoiceItem.getCstPis()).add(EFDFormatter.bigDecimal(this.invoiceItem.getVlBcPis()))
                 .add(EFDFormatter.bigDecimal(this.invoiceItem.getAliqPisPercetual()))
                 .add(EFDFormatter.bigDecimal(this.invoiceItem.getQuantBcPis()))
+                .add(EFDFormatter.bigDecimal(this.invoiceItem.getAliqPis()))
                 .add(EFDFormatter.bigDecimal(this.invoiceItem.getVlPis()))
                 .add(this.invoiceItem.getCstCofins()).add(EFDFormatter.bigDecimal(this.invoiceItem.getVlBcCofins()))
                 .add(EFDFormatter.bigDecimal(this.invoiceItem.getAliqCofinsPercetual()))
                 .add(EFDFormatter.bigDecimal(this.invoiceItem.getQuantBcCofins()))
+                .add(EFDFormatter.bigDecimal(this.invoiceItem.getAliqCofins()))
                 .add(EFDFormatter.bigDecimal(this.invoiceItem.getVlCofins())).add(this.invoiceItem.getCodCta())
                 .add(EFDFormatter.bigDecimal(this.invoiceItem.getVlAbatNt()))
                 .build();
