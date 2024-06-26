@@ -2,7 +2,7 @@ package org.fastsped.blocks.efdIcmsIpi.registers.blockZero;
 
 import org.fastsped.interfaces.Register;
 import org.fastsped.commons.BuilderRegister;
-import org.fastsped.commons.Index;
+import org.fastsped.commons.enums.Index;
 
 public class Register0001 implements Register {
     private final Index index;

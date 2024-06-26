@@ -4,7 +4,7 @@ import org.fastsped.model.data.Accountant;
 import org.fastsped.model.data.CompanyComplement;
 import org.fastsped.model.data.Invoice;
 import org.fastsped.model.data.OpeningEfd;
-import org.fastsped.commons.Profile;
+import org.fastsped.commons.enums.Profile;
 
 import java.util.List;
 

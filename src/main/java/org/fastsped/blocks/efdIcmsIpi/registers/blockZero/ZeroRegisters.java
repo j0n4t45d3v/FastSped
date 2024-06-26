@@ -1,6 +1,6 @@
 package org.fastsped.blocks.efdIcmsIpi.registers.blockZero;
 
-import org.fastsped.commons.Index;
+import org.fastsped.commons.enums.Index;
 import org.fastsped.commons.RegisterUtil;
 import org.fastsped.interfaces.Register;
 import org.fastsped.interfaces.RegisterFactory;

@@ -1,7 +1,7 @@
 package efdfiscal;
 
 import org.fastsped.EFDIcmsIpiGenerate;
-import org.fastsped.commons.Profile;
+import org.fastsped.commons.enums.Profile;
 import org.fastsped.interfaces.GenerateEfd;
 import org.fastsped.model.EfdIcmsIpi;
 import org.fastsped.model.data.*;

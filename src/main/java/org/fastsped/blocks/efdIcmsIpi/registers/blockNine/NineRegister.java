@@ -1,6 +1,6 @@
 package org.fastsped.blocks.efdIcmsIpi.registers.blockNine;
 
-import org.fastsped.commons.Index;
+import org.fastsped.commons.enums.Index;
 import org.fastsped.commons.RegisterUtil;
 import org.fastsped.interfaces.Register;
 import org.fastsped.interfaces.RegisterFactory;
@@ -10,8 +10,8 @@ import java.util.Comparator;
 import java.util.Map;
 import java.util.TreeMap;
 
-import static org.fastsped.commons.Index.CONTENT;
-import static org.fastsped.commons.Index.NOT_CONTENT;
+import static org.fastsped.commons.enums.Index.CONTENT;
+import static org.fastsped.commons.enums.Index.NOT_CONTENT;
 
 public class NineRegister implements RegisterFactory {
     private int quantity;

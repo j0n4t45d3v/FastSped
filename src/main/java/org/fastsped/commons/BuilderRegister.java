@@ -1,5 +1,7 @@
 package org.fastsped.commons;
 
+import org.fastsped.commons.enums.Index;
+
 public class BuilderRegister {
     private final StringBuilder register;
 

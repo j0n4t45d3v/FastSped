@@ -1,7 +1,7 @@
 package org.fastsped.blocks.efdIcmsIpi.registers.blockC;
 
 import org.fastsped.commons.BuilderRegister;
-import org.fastsped.commons.Index;
+import org.fastsped.commons.enums.Index;
 import org.fastsped.interfaces.Register;
 
 public class RegisterC001 implements Register {

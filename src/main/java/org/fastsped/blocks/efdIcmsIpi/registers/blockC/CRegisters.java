@@ -1,6 +1,6 @@
 package org.fastsped.blocks.efdIcmsIpi.registers.blockC;
 
-import org.fastsped.commons.Index;
+import org.fastsped.commons.enums.Index;
 import org.fastsped.commons.RegisterUtil;
 import org.fastsped.interfaces.Register;
 import org.fastsped.interfaces.RegisterFactory;
@@ -12,8 +12,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.fastsped.commons.Index.CONTENT;
-import static org.fastsped.commons.Index.NOT_CONTENT;
+import static org.fastsped.commons.enums.Index.CONTENT;
+import static org.fastsped.commons.enums.Index.NOT_CONTENT;
 
 public class CRegisters implements RegisterFactory {
 

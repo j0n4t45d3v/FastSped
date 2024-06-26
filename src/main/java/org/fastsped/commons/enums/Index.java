@@ -1,4 +1,4 @@
-package org.fastsped.commons;
+package org.fastsped.commons.enums;
 
 /**
  * Enumeração que representa o índice de conteúdo de um bloco.
