@@ -105,7 +105,7 @@ public class NineRegister implements RegisterFactory {
      * @return Uma string contendo o registro 9999 gerado.
      */
     private String generateRegister9999() {
-        Register register = new Register9999(this.quantity);
+        Register register = new Register9999(this.quantity + 1);
         return RegisterUtil.generateRegister(register);
     }
 
