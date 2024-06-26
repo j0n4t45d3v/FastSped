@@ -8,18 +8,23 @@ import org.fastsped.model.EfdIcmsIpi;
 import org.fastsped.model.data.Invoice;
 import org.fastsped.model.data.InvoiceItem;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-import static org.fastsped.commons.Index.*;
+import static org.fastsped.commons.Index.CONTENT;
+import static org.fastsped.commons.Index.NOT_CONTENT;
 
 public class CRegisters implements RegisterFactory {
 
     private final EfdIcmsIpi efdIcmsIpi;
     private int quantity;
+    private final Map<String, Integer> quantityPerRegister;
 
     public CRegisters(EfdIcmsIpi efdIcmsIpi) {
         this.efdIcmsIpi = efdIcmsIpi;
         this.quantity = 0;
+        this.quantityPerRegister = new HashMap<>();
     }
 
     @Override
@@ -37,6 +42,7 @@ public class CRegisters implements RegisterFactory {
             }
         }
         registersGenerated.append(this.closeRegister("C", this.quantity));
+        RegisterUtil.addQuantityRegs("C990", this.quantityPerRegister);
         return registersGenerated.toString();
     }
 
@@ -44,22 +50,30 @@ public class CRegisters implements RegisterFactory {
         Index index = blockIsEmpty ? NOT_CONTENT : CONTENT;
         Register register = new RegisterC001(index);
         this.addLineInQuantity(register);
+        RegisterUtil.addQuantityRegs("C001", this.quantityPerRegister);
         return RegisterUtil.generateRegister(register);
     }
 
     private String generateRegisterC100(Invoice invoice) {
         Register register = new RegisterC100(invoice);
         this.addLineInQuantity(register);
+        RegisterUtil.addQuantityRegs("C100", this.quantityPerRegister);
         return RegisterUtil.generateRegister(register);
     }
 
     private String generateRegisterC170(InvoiceItem item, int numItem) {
         Register register = new RegisterC170(item, numItem);
         this.addLineInQuantity(register);
+        RegisterUtil.addQuantityRegs("C170", this.quantityPerRegister);
         return RegisterUtil.generateRegister(register);
     }
 
     private void addLineInQuantity(Register register) {
         this.quantity += register.getQuantityLines();
+    }
+
+    @Override
+    public Map<String, Integer> getQuantityPerRegister() {
+        return this.quantityPerRegister;
     }
 }

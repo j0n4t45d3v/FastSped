@@ -9,6 +9,8 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.Map;
 
 public class EFDIcmsIpiGenerate implements GenerateEfd {
 
@@ -73,22 +75,39 @@ public class EFDIcmsIpiGenerate implements GenerateEfd {
         Block blockK = new BlockK();
         Block blockOne = new BlockOne();
         Block blockNine = new BlockNine();
+        Map<String, Integer> regsAndQuantityLines = new HashMap<>();
 
-        this.writeBytes(blockZero, outputStream);
-        this.writeBytes(blockB, outputStream);
-        this.writeBytes(blockC, outputStream);
-        this.writeBytes(blockD, outputStream);
-        this.writeBytes(blockE, outputStream);
-        this.writeBytes(blockG, outputStream);
-        this.writeBytes(blockH, outputStream);
-        this.writeBytes(blockK, outputStream);
-        this.writeBytes(blockOne, outputStream);
-        this.writeBytes(blockNine, outputStream);
+        this.writeBytes(blockZero, outputStream, regsAndQuantityLines);
+        this.writeBytes(blockB, outputStream, regsAndQuantityLines);
+        this.writeBytes(blockC, outputStream, regsAndQuantityLines);
+        this.writeBytes(blockD, outputStream, regsAndQuantityLines);
+        this.writeBytes(blockE, outputStream, regsAndQuantityLines);
+        this.writeBytes(blockG, outputStream, regsAndQuantityLines);
+        this.writeBytes(blockH, outputStream, regsAndQuantityLines);
+        this.writeBytes(blockK, outputStream, regsAndQuantityLines);
+        this.writeBytes(blockOne, outputStream, regsAndQuantityLines);
+        this.writeBytesNineBlock(blockNine, outputStream, regsAndQuantityLines);
 
         return outputStream.toByteArray();
     }
 
-    private void writeBytes(Block block, ByteArrayOutputStream outputStream) throws IOException {
+    private void writeBytesNineBlock(
+            Block block,
+            ByteArrayOutputStream outputStream,
+            Map<String, Integer> quantityLinesPerRegs
+    ) throws IOException {
+        ((BlockNine)block).setQuantityRegs(quantityLinesPerRegs);
+        this.writeBytes(block, outputStream, new HashMap<>());
+    }
+
+    private void writeBytes(
+            Block block,
+            ByteArrayOutputStream outputStream,
+            Map<String, Integer> quantityLinesPerRegs
+    ) throws IOException {
         outputStream.write(block.generateBlock());
+        if(block.getQuantityLines() != null) {
+            quantityLinesPerRegs.putAll(block.getQuantityLines());
+        }
     }
 }

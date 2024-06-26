@@ -2,6 +2,8 @@ package org.fastsped.interfaces;
 
 import org.fastsped.commons.BuilderRegister;
 
+import java.util.Map;
+
 public interface RegisterFactory {
     String getRegisters(String[] registers);
 
@@ -10,4 +12,6 @@ public interface RegisterFactory {
                 .add(String.valueOf(quantity + 1))
                 .build();
     }
+
+    Map<String, Integer> getQuantityPerRegister();
 }

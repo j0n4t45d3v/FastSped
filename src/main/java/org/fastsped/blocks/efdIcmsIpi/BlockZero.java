@@ -6,6 +6,8 @@ import org.fastsped.interfaces.Block;
 import org.fastsped.interfaces.RegisterFactory;
 import org.fastsped.model.EfdIcmsIpi;
 
+import java.util.Map;
+
 /**
  * Class representation block zero in the EFD Icms Ipi.
  * This block is used to generate the file header.
@@ -14,6 +16,7 @@ import org.fastsped.model.EfdIcmsIpi;
 public class BlockZero implements Block {
 
     private final EfdIcmsIpi efdIcmsIpi;
+    private Map<String, Integer> quantityPerRegister;
 
     /**
      * Param required to create the block zero.
@@ -21,6 +24,7 @@ public class BlockZero implements Block {
      * */
     public BlockZero(EfdIcmsIpi efdIcmsIpi) {
         this.efdIcmsIpi = efdIcmsIpi;
+        this.quantityPerRegister = null;
     }
 
     /**
@@ -30,12 +34,13 @@ public class BlockZero implements Block {
     @Override
     public byte[] generateBlock() {
         RegisterFactory factory = new ZeroRegisters(this.efdIcmsIpi);
+        this.quantityPerRegister = factory.getQuantityPerRegister();
         String[] regs = {"0002"};
         return BlockUtil.generateBlock(factory, regs);
     }
 
     @Override
-    public int getQuantityLines() {
-        return 0;
+    public Map<String, Integer> getQuantityLines() {
+        return this.quantityPerRegister;
     }
 }

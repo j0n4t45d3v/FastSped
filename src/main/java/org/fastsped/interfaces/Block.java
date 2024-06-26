@@ -1,9 +1,11 @@
 package org.fastsped.interfaces;
 
+import java.util.Map;
+
 public interface Block {
 
     byte[] generateBlock();
 
-    int getQuantityLines();
+    Map<String, Integer> getQuantityLines();
 
 }
