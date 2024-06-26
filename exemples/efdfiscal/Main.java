@@ -19,8 +19,10 @@ public class Main {
         efdIcmsIpi.setOpeningEfd(createOpeningEfd());
         efdIcmsIpi.setCompanyComplement(createCompanyComplement());
         efdIcmsIpi.setAccountant(createAccountant());
+        efdIcmsIpi.setUnits(createUnits());
+        efdIcmsIpi.setProducts(createProducts());
         efdIcmsIpi.setInvoices(createInvoices());
-        efdIcmsIpi.setProfile(Profile.A);
+        efdIcmsIpi.setProfile(Profile.B);
 
         GenerateEfd generateEfd = new EFDIcmsIpiGenerate();
         String pathGenerateSped = Paths.get("sped").toAbsolutePath().toString();
@@ -48,7 +50,7 @@ public class Main {
         opening.setCpf("");
         opening.setUf("SP");
         opening.setIe("123456789012");
-        opening.setCodMun("1234567");
+        opening.setCodMun("3500105");
         opening.setIm("123456789012");
         opening.setSuframa("123456789");
         opening.setIndAtiv("1");
@@ -84,6 +86,27 @@ public class Main {
         accountant.setEmail("empresa@teste");
         accountant.setCodMun("1234567");
         return accountant;
+    }
+
+    private static List<Unit> createUnits() {
+        Unit unit1 = new Unit("1", "UN");
+        Unit unit2 = new Unit("2", "KG");
+        return Arrays.asList(unit1, unit2);
+    }
+
+    private static List<Product> createProducts() {
+        Product product1 = new Product(
+                "001", "Produto A", "1234567890123", "0001",
+                "1", "00", "1234.56.78", "001", "12",
+                "12345", new BigDecimal("18.0"), "0100100"
+        );
+
+        Product product2 = new Product(
+                "002", "Produto B", "9876543210987", "0002",
+                "2", "01", "8765.43.21", "002", "34",
+                "54321", new BigDecimal("12.0"), "0100200"
+        );
+        return Arrays.asList(product1, product2);
     }
 
     private static List<Invoice> createInvoices() {

@@ -7,6 +7,8 @@ import org.fastsped.interfaces.RegisterFactory;
 import org.fastsped.model.EfdIcmsIpi;
 import org.fastsped.model.data.Accountant;
 import org.fastsped.model.data.CompanyComplement;
+import org.fastsped.model.data.Product;
+import org.fastsped.model.data.Unit;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -42,6 +44,8 @@ public class ZeroRegisters implements RegisterFactory {
         registersGenerates += this.generateRegister0002(registers);
         registersGenerates += this.generateRegister0005();
         registersGenerates += this.generateRegister0100();
+        registersGenerates += this.generateRegister0190();
+        registersGenerates += this.generateRegister0200();
         registersGenerates += this.closeRegister("0", this.quantity);
         RegisterUtil.addQuantityRegs("0990", this.quantityPerRegister);
         return registersGenerates;
@@ -119,5 +123,37 @@ public class ZeroRegisters implements RegisterFactory {
         this.quantity += register.getQuantityLines();
         RegisterUtil.addQuantityRegs("0100", this.quantityPerRegister);
         return RegisterUtil.generateRegister(register);
+    }
+
+    /**
+     * Gera o registro 0190 do bloco 0 com base nas unidades fornecidas.
+     *
+     * @return Uma string contendo o registro 0190 gerado.
+     */
+    private String generateRegister0190() {
+        StringBuilder registers0190 = new StringBuilder();
+        for (Unit unit : this.efdIcmsIpi.getUnits()) {
+            Register register = new Register0190(unit);
+            this.quantity ++;
+            RegisterUtil.addQuantityRegs("0190", this.quantityPerRegister);
+            registers0190.append(RegisterUtil.generateRegister(register));
+        }
+        return registers0190.toString();
+    }
+
+    /**
+     * Gera o registro 0190 do bloco 0 com base nas unidades fornecidas.
+     *
+     * @return Uma string contendo o registro 0190 gerado.
+     */
+    private String generateRegister0200() {
+        StringBuilder registers0200 = new StringBuilder();
+        for (Product product : this.efdIcmsIpi.getProducts()) {
+            Register register = new Register0200(product);
+            this.quantity ++;
+            RegisterUtil.addQuantityRegs("0200", this.quantityPerRegister);
+            registers0200.append(RegisterUtil.generateRegister(register));
+        }
+        return registers0200.toString();
     }
 }

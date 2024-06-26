@@ -36,9 +36,23 @@ public class EFDFormatter {
      * @return O número formatado como uma string no formato 0,00.
      */
     public static String bigDecimal(BigDecimal number) {
-        DecimalFormat pattern = new DecimalFormat("0,00");
+        DecimalFormat pattern = new DecimalFormat("0.00");
         String numberFormatted = pattern.format(number);
         return numberFormatted.replace(".", ",");
+    }
+
+    /**
+     * Limpa a string removendo espaços em branco no começo e no final, ponto, virgula, barra e -.
+     *
+     * @param value String a ser limpada
+     * @return string sem os caracteres indesejados e espaço em branco
+     */
+    public static String cleanString(String value) {
+        return value.trim()
+                .replace(".", "")
+                .replace("-", "")
+                .replace("/", "")
+                .replace(",", "");
     }
 
     /**

@@ -1,9 +1,6 @@
 package org.fastsped.model;
 
-import org.fastsped.model.data.Accountant;
-import org.fastsped.model.data.CompanyComplement;
-import org.fastsped.model.data.Invoice;
-import org.fastsped.model.data.OpeningEfd;
+import org.fastsped.model.data.*;
 import org.fastsped.commons.enums.Profile;
 
 import java.util.List;
@@ -50,6 +47,8 @@ public class EfdIcmsIpi {
     private CompanyComplement companyComplement;
     private Accountant accountant;
     private List<Invoice> invoices;
+    private List<Unit> units;
+    private List<Product> products;
     private Profile profile;
 
     /**
@@ -57,6 +56,8 @@ public class EfdIcmsIpi {
      * @param openingEfd Objeto contendo os dados de abertura do EFD ICMS IPI.
      * @param companyComplement Objeto contendo os dados de complemento da empresa no EFD ICMS IPI.
      * @param accountant Objeto contendo os dados do contador no EFD ICMS IPI.
+     * @param units Objeto contendo os dados das unidades dos produtos no EFD ICMS IPI.
+     * @param products Objeto contendo os dados dos produtos que aparecem no EFD ICMS IPI.
      * @param invoices Lista de faturas contendo os dados para os blocos relacionados às faturas no EFD ICMS IPI.
      * @param profile Perfil da empresa contendo informações adicionais.
      */
@@ -64,12 +65,16 @@ public class EfdIcmsIpi {
             OpeningEfd openingEfd,
             CompanyComplement companyComplement,
             Accountant accountant,
+            List<Unit> units,
+            List<Product> products,
             List<Invoice> invoices,
             Profile profile
     ) {
         this.openingEfd = openingEfd;
         this.companyComplement = companyComplement;
         this.accountant = accountant;
+        this.units = units;
+        this.products = products;
         this.invoices = invoices;
         this.profile = profile;
     }
@@ -110,6 +115,22 @@ public class EfdIcmsIpi {
 
     public void setAccountant(Accountant accountant) {
         this.accountant = accountant;
+    }
+
+    public List<Unit> getUnits() {
+        return units;
+    }
+
+    public void setUnits(List<Unit> units) {
+        this.units = units;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 
     public List<Invoice> getInvoices() {
