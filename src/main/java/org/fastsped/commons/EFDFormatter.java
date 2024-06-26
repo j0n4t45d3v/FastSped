@@ -41,4 +41,40 @@ public class EFDFormatter {
         return numberFormatted.replace(".", ",");
     }
 
+    /**
+     * Formata o cst para o padrão aceito pelo EFD Fiscal.
+     *
+     * <p>
+     * Caso o cst seja menor que o requerido será acrencentado zeros a esqueda até chegar ao tamanho requerido.
+     * Mas se o cst for mais será truncado o valor passado pro cst.
+     * </p>
+     *
+     * @param cst
+     * @return O cst formatado como uma stringno formato 000
+     */
+    public static String cstIcms(String cst) {
+        if(cst.length() > 3) {
+            return cst.substring(0, 3);
+        }
+        return padLeftString(cst, "0", 3);
+    }
+
+    /**
+     * Adiciona um preenchimento à esquerda de uma string até atingir um comprimento especificado.
+     *
+     * @param value A string original.
+     * @param valuePad A string usada para preencher à esquerda.
+     * @param length O comprimento total desejado após o preenchimento.
+     * @return A string preenchida à esquerda com o valor especificado.
+     */
+    private static String padLeftString(String value, String valuePad, int length) {
+        int difference = length - value.length();
+        StringBuilder repeat = new StringBuilder();
+        while(difference > 0) {
+            repeat.append(valuePad);
+            difference --;
+        }
+        return String.format("%s%s", repeat, value);
+    }
+
 }
