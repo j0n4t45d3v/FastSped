@@ -1,6 +1,7 @@
 package org.fastsped.blocks.efdIcmsIpi.registers.blockZero;
 
 import org.fastsped.exceptions.CnpjAndCpfIsNullException;
+import org.fastsped.exceptions.FieldSizeException;
 import org.fastsped.model.EfdIcmsIpi;
 import org.fastsped.interfaces.Register;
 import org.fastsped.commons.BuilderRegister;
@@ -49,6 +50,11 @@ public class Register0000 implements Register {
         if(this.cnpj == null && this.cpf == null){
             throw new CnpjAndCpfIsNullException();
         }
+
+        if(this.suframa.length() > 9) {
+            throw new FieldSizeException("field suframa is greater than 9.");
+        }
+
         return BuilderRegister.builder("0000")
                 .add(codVer).add(codFin)
                 .add(dtIni).add(dtFin)

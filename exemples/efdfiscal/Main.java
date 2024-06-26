@@ -50,7 +50,7 @@ public class Main {
         opening.setIe("123456789012");
         opening.setCodMun("1234567");
         opening.setIm("123456789012");
-        opening.setSuframa("12345678901234");
+        opening.setSuframa("123456789");
         opening.setIndAtiv("1");
         return opening;
     }
