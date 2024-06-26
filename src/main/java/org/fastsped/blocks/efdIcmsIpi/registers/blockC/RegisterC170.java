@@ -5,15 +5,29 @@ import org.fastsped.commons.EFDFormatter;
 import org.fastsped.interfaces.Register;
 import org.fastsped.model.data.InvoiceItem;
 
+/**
+ * Implementação da interface {@link Register} para o registro C170 do EFD ICMS IPI.
+ * Este registro representa um item da nota fiscal dentro do bloco C.
+ */
 public class RegisterC170 implements Register {
-    private final InvoiceItem invoiceItem;
-    private int numItem;
 
+    private final InvoiceItem invoiceItem;
+    private final int numItem;
+
+    /**
+     * Construtor da classe {@code RegisterC170}.
+     *
+     * @param invoiceItem Objeto {@link InvoiceItem} que contém os dados do item da nota fiscal.
+     * @param numItem     Número do item na nota fiscal.
+     */
     public RegisterC170(InvoiceItem invoiceItem, int numItem) {
         this.invoiceItem = invoiceItem;
         this.numItem = numItem;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String generateRegister() {
         return BuilderRegister.builder("C170")
@@ -45,6 +59,9 @@ public class RegisterC170 implements Register {
                 .build();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getQuantityLines() {
         return 1;
