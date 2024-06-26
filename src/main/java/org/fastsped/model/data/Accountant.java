@@ -1,5 +1,8 @@
 package org.fastsped.model.data;
 
+/**
+ * Representa um contador responsável pela escrituração fiscal digital (EFD).
+ */
 public class Accountant {
     private String name;
     private String cpf;
@@ -15,6 +18,22 @@ public class Accountant {
     private String email;
     private String codMun;
 
+    /**
+     * Constrói um objeto `Accountant` com os dados fornecidos.
+     * @param name Nome do contador.
+     * @param cpf CPF do contador.
+     * @param crc CRC (Conselho Regional de Contabilidade) do contador.
+     * @param cnpj CNPJ do contador (se pessoa jurídica).
+     * @param cep CEP do endereço do contador.
+     * @param end Endereço do contador.
+     * @param num Número do endereço do contador.
+     * @param compl Complemento do endereço do contador.
+     * @param bairro Bairro do endereço do contador.
+     * @param fone Telefone do contador.
+     * @param fax Fax do contador.
+     * @param email Email do contador.
+     * @param codMun Código do município do contador.
+     */
     public Accountant(
             String name, String cpf, String crc, String cnpj, String cep, String end,
             String num, String compl, String bairro, String fone, String fax, String email,
@@ -35,6 +54,9 @@ public class Accountant {
         this.codMun = codMun;
     }
 
+    /**
+     * Construtor padrão de `Accountant`.
+     */
     public Accountant() {
     }
 

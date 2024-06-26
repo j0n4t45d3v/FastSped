@@ -9,9 +9,43 @@ import org.fastsped.commons.Profile;
 import java.util.List;
 
 /**
- * Model responsible to storing the data necessary to generate the EFD ICMS IPI.
- * */
+ * Classe responsável por armazenar os dados necessários para gerar o EFD ICMS IPI.
+ * <p>
+ * Esta classe encapsula os dados essenciais para a geração dos blocos do EFD ICMS IPI,
+ * incluindo informações de abertura, complemento da empresa, contador, faturas e perfil da empresa, entre outros.
+ * </p>
+ * <p>
+ * Exemplo de uso:
+ * <pre>{@code
+ * // Exemplo de criação de um objeto EfdIcmsIpi
+ * EfdIcmsIpi efdIcmsIpi = new EfdIcmsIpi(openingEfd, companyComplement, accountant, invoices, profile);
+ * }</pre>
+ * </p>
+ * <p>
+ * Os parâmetros fornecidos no construtor descrevem os dados específicos necessários para cada bloco
+ * dentro do EFD ICMS IPI:
+ * <ul>
+ * <li>{@code openingEfd}: Dados necessários para gerar o bloco de abertura do EFD ICMS IPI.</li>
+ * <li>{@code companyComplement}: Dados necessários para gerar o bloco de complemento da empresa.</li>
+ * <li>{@code accountant}: Dados necessários para gerar o bloco do contador.</li>
+ * <li>{@code invoices}: Lista de faturas contendo os dados para os blocos relacionados às faturas.</li>
+ * <li>{@code profile}: Perfil da empresa contendo informações adicionais.</li>
+ * <li>...</li>
+ * </ul>
+ * </p>
+ * <p>
+ * Cada método getter e setter permite o acesso e a modificação dos dados encapsulados dentro desta classe,
+ * facilitando a integração e o processamento dos dados necessários para gerar o arquivo EFD ICMS IPI.
+ * </p>
+ * <p>
+ * Para mais detalhes sobre o formato e as especificações do EFD ICMS IPI, consulte a documentação
+ * oficial fornecida pelas autoridades fiscais.
+ * </p>
+ * <p>
+ * @autor Jonatas
+ */
 public class EfdIcmsIpi {
+
     private OpeningEfd openingEfd;
     private CompanyComplement companyComplement;
     private Accountant accountant;
@@ -19,12 +53,13 @@ public class EfdIcmsIpi {
     private Profile profile;
 
     /**
-     * @param openingEfd Object that contains necessary data to generate opening block in the EFD Icms Ipi.
-     * @param companyComplement Object that contains necessary data to generate the company complement block in the EFD Icms Ipi.
-     * @param accountant Object that contains necessary data to generate the accountant block in the EFD Icms Ipi.
-     * @param invoices Object that contains necessary data to generate the accountant block in the EFD Icms Ipi.
-     * @param profile Profile that contains company profile.
-     * */
+     * Constrói uma instância de EfdIcmsIpi com os dados fornecidos.
+     * @param openingEfd Objeto contendo os dados de abertura do EFD ICMS IPI.
+     * @param companyComplement Objeto contendo os dados de complemento da empresa no EFD ICMS IPI.
+     * @param accountant Objeto contendo os dados do contador no EFD ICMS IPI.
+     * @param invoices Lista de faturas contendo os dados para os blocos relacionados às faturas no EFD ICMS IPI.
+     * @param profile Perfil da empresa contendo informações adicionais.
+     */
     public EfdIcmsIpi(
             OpeningEfd openingEfd,
             CompanyComplement companyComplement,
@@ -39,6 +74,9 @@ public class EfdIcmsIpi {
         this.profile = profile;
     }
 
+    /**
+     * Constrói uma instância vazia de EfdIcmsIpi.
+     */
     public EfdIcmsIpi() {
     }
 
