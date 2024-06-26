@@ -2,6 +2,7 @@ package org.fastsped.blocks.efdIcmsIpi.registers.blockC;
 
 import org.fastsped.commons.BuilderRegister;
 import org.fastsped.commons.EFDFormatter;
+import org.fastsped.exceptions.ValueInvalidException;
 import org.fastsped.interfaces.Register;
 import org.fastsped.model.data.Invoice;
 
@@ -27,6 +28,14 @@ public class RegisterC100 implements Register {
      */
     @Override
     public String generateRegister() {
+        if (!this.invoice.getIndOper().equals("1") && !this.invoice.getIndOper().equals("0")) {
+            String message = String.format(
+                    "Value %s is not valid in the 'ind_oper' field. Valid values are: (0 - entry, 1 - exit)",
+                    this.invoice.getIndOper()
+            );
+            throw new ValueInvalidException(message);
+        }
+
         return BuilderRegister.builder("C100")
                 .add(this.invoice.getIndOper()).add(this.invoice.getIndEmit()).add(this.invoice.getCodPart())
                 .add(this.invoice.getCodMod()).add(this.invoice.getCodSit()).add(this.invoice.getSer())
