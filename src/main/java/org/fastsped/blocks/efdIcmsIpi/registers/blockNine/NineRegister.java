@@ -38,7 +38,7 @@ public class NineRegister implements RegisterFactory {
     @Override
     public String getRegisters(String[] registers) {
         StringBuilder registersGenerated = new StringBuilder();
-        registersGenerated.append(this.generateRegister9001(true));
+        registersGenerated.append(this.generateRegister9001(false));
 
         Comparator<String> comparator = this.mapOrder();
 

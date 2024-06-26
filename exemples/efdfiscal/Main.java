@@ -41,7 +41,7 @@ public class Main {
         opening.setIndMov("0");
         opening.setCodVer("018");
         opening.setCodFin("0");
-        opening.setDtIni("01012024");
+        opening.setDtIni("01122024");
         opening.setDtFin("31122024");
         opening.setNome("EMPRESA TESTE");
         opening.setCnpj("12345678901234");
@@ -120,7 +120,7 @@ public class Main {
         );
 
         Invoice invoice2 = new Invoice(
-                "2", "0", "002", "01", "01", "2", "654321",
+                "0", "0", "002", "01", "01", "2", "654321",
                 "09876543210987654321098765432109876543210987", new Date(), new Date(),
                 new BigDecimal("2000.00"), "1", new BigDecimal("100.00"), new BigDecimal("50.00"),
                 new BigDecimal("1850.00"), "0", new BigDecimal("200.00"), new BigDecimal("50.00"),
