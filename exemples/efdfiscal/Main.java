@@ -39,10 +39,10 @@ public class Main {
     private static OpeningEfd createOpeningEfd() {
         OpeningEfd opening = new OpeningEfd();
         opening.setIndMov("0");
-        opening.setCodVer("001");
+        opening.setCodVer("018");
         opening.setCodFin("0");
-        opening.setDtIni("01012020");
-        opening.setDtFin("31122020");
+        opening.setDtIni("01012024");
+        opening.setDtFin("31122024");
         opening.setNome("EMPRESA TESTE");
         opening.setCnpj("12345678901234");
         opening.setCpf("");

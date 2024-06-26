@@ -17,6 +17,7 @@ public class Register0100 implements Register {
                 .add(accountant.getName())
                 .add(accountant.getCpf())
                 .add(accountant.getCrc())
+                .add(accountant.getCnpj())
                 .add(accountant.getCep())
                 .add(accountant.getEnd())
                 .add(accountant.getNum())

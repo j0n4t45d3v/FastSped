@@ -4,6 +4,7 @@ public class Accountant {
     private String name;
     private String cpf;
     private String crc;
+    private String cnpj;
     private String cep;
     private String end;
     private String num;
@@ -15,22 +16,14 @@ public class Accountant {
     private String codMun;
 
     public Accountant(
-            String name,
-            String cpf,
-            String crc,
-            String cep,
-            String end,
-            String num,
-            String compl,
-            String bairro,
-            String fone,
-            String fax,
-            String email,
+            String name, String cpf, String crc, String cnpj, String cep, String end,
+            String num, String compl, String bairro, String fone, String fax, String email,
             String codMun
     ) {
         this.name = name;
         this.cpf = cpf;
         this.crc = crc;
+        this.cnpj = cnpj;
         this.cep = cep;
         this.end = end;
         this.num = num;
@@ -67,6 +60,14 @@ public class Accountant {
 
     public void setCrc(String crc) {
         this.crc = crc;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
     }
 
     public String getCep() {
