@@ -6,26 +6,14 @@ import org.fastsped.interfaces.Register;
 import org.fastsped.model.data.Product;
 import org.fastsped.model.data.Unit;
 
-/**
- * Implementação da interface {@link Register} para o registro 0000 do Bloco 0 do EFD ICMS IPI.
- * Este registro contém informações dos produtos do arquivo EFD ICMS IPI.
- */
 public class Register0200 implements Register {
 
     private Product product;
 
-    /**
-     * Construtor da classe {@code Register0200}.
-     *
-     * @param product Objeto {@link Product} contendo os dados dos produtos do EFD ICMS IPI.
-     */
-    public Register0200(Product product) {
+        public Register0200(Product product) {
         this.product = product;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public String generateRegister() {
 
@@ -39,9 +27,6 @@ public class Register0200 implements Register {
                 .build();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public int getQuantityLines() {
         return 1;

@@ -11,25 +11,15 @@ import java.util.Map;
 import static org.fastsped.commons.enums.Index.CONTENT;
 import static org.fastsped.commons.enums.Index.NOT_CONTENT;
 
-/**
- * Classe responsável pela geração dos registros do bloco E do EFD ICMS IPI.
- * Implementa a interface {@link RegisterFactory} para definir métodos de geração de registros e controle de quantidades.
- */
 public class ERegister implements RegisterFactory {
 
     private int quantity;
     private final Map<String, Integer> quantityPerRegister;
 
-    /**
-     * Construtor que inicializa a classe com os contadores de quantidade de registros.
-     */
-    public ERegister() {
+        public ERegister() {
         this.quantity = 0;
         this.quantityPerRegister = new HashMap<>();
     }
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public String getRegisters(String[] registers) {
         StringBuilder registersGenerated = new StringBuilder();
@@ -39,21 +29,12 @@ public class ERegister implements RegisterFactory {
         return registersGenerated.toString();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public Map<String, Integer> getQuantityPerRegister() {
         return this.quantityPerRegister;
     }
 
-    /**
-     * Gera o registro E001 com base no índice indicando se o bloco está vazio ou não.
-     *
-     * @param blockIsEmpty Indica se o bloco está vazio (true) ou não (false).
-     * @return Uma string contendo o registro E001 gerado.
-     */
-    private String generateRegisterE001(boolean blockIsEmpty) {
+        private String generateRegisterE001(boolean blockIsEmpty) {
         Index index = blockIsEmpty ? NOT_CONTENT: CONTENT;
         Register register = new RegisterE001(index);
         this.quantity ++;

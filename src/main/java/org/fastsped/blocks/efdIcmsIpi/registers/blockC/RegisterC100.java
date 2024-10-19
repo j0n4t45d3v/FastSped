@@ -6,26 +6,14 @@ import org.fastsped.exceptions.ValueInvalidException;
 import org.fastsped.interfaces.Register;
 import org.fastsped.model.data.Invoice;
 
-/**
- * Implementação da interface {@link Register} para o registro C100 do EFD ICMS IPI.
- * Este registro representa um documento fiscal dentro do bloco C.
- */
 public class RegisterC100 implements Register {
 
     private final Invoice invoice;
 
-    /**
-     * Construtor da classe {@code RegisterC100}.
-     *
-     * @param invoice Objeto {@link Invoice} que contém os dados do documento fiscal.
-     */
     public RegisterC100(Invoice invoice) {
         this.invoice = invoice;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public String generateRegister() {
         if (!this.invoice.getIndOper().equals("1") && !this.invoice.getIndOper().equals("0")) {
@@ -60,9 +48,6 @@ public class RegisterC100 implements Register {
                 .build();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public int getQuantityLines() {
         return 1;

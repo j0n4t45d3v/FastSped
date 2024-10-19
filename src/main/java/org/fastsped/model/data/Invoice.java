@@ -4,9 +4,6 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Representa uma nota fiscal.
- */
 public class Invoice {
     private String indOper;
     private String indEmit;
@@ -38,38 +35,6 @@ public class Invoice {
     private BigDecimal vlCofinsSt;
     private List<InvoiceItem> invoiceItems;
 
-    /**
-     * Construtor que inicializa um objeto `Invoice` com os dados fornecidos.
-     * @param indOper Indicador de operação.
-     * @param indEmit Indicador de emissão.
-     * @param codPart Código do participante.
-     * @param codMod Código do modelo do documento fiscal.
-     * @param codSit Código da situação do documento fiscal.
-     * @param ser Série do documento fiscal.
-     * @param numDoc Número do documento fiscal.
-     * @param chvNfe Chave da Nota Fiscal Eletrônica.
-     * @param dtDoc Data de emissão do documento fiscal.
-     * @param dtES Data de entrada/saída da mercadoria.
-     * @param vlDoc Valor total do documento fiscal.
-     * @param indPgto Indicador de forma de pagamento.
-     * @param vlDesc Valor total de desconto.
-     * @param vlAbatNt Valor total de abatimento não tributado.
-     * @param vlMerc Valor total das mercadorias e serviços.
-     * @param indFrt Indicador de frete.
-     * @param vlFrt Valor total do frete.
-     * @param vlSeg Valor total do seguro.
-     * @param vlOutDa Valor total de outras despesas acessórias.
-     * @param vlBcIcms Valor da base de cálculo do ICMS.
-     * @param vlIcms Valor total do ICMS.
-     * @param vlBcIcmsSt Valor da base de cálculo do ICMS substituição tributária.
-     * @param vlIcmsSt Valor total do ICMS substituição tributária.
-     * @param vlIpi Valor total do IPI.
-     * @param vlPis Valor total do PIS.
-     * @param vlCofins Valor total da COFINS.
-     * @param vlPisSt Valor total do PIS substituição tributária.
-     * @param vlCofinsSt Valor total da COFINS substituição tributária.
-     * @param invoiceItems Lista de itens da nota fiscal.
-     */
     public Invoice(
             String indOper, String indEmit, String codPart, String codMod,
             String codSit,String ser, String numDoc, String chvNfe, Date dtDoc,

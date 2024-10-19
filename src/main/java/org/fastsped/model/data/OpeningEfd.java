@@ -1,8 +1,5 @@
 package org.fastsped.model.data;
 
-/**
- * Representa informações de abertura do EFD (Escrituração Fiscal Digital).
- */
 public class OpeningEfd {
     private String reg;
     private String indMov;
@@ -20,9 +17,6 @@ public class OpeningEfd {
     private String suframa;
     private String indAtiv;
 
-    /**
-     * Construtor padrão da classe OpeningEfd.
-     */
     public OpeningEfd() {
     }
 

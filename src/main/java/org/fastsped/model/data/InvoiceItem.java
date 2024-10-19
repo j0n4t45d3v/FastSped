@@ -2,9 +2,6 @@ package org.fastsped.model.data;
 
 import java.math.BigDecimal;
 
-/**
- * Representa um item da nota fiscal.
- */
 public class InvoiceItem {
     private String codItem;
     private String descrCompl;
@@ -44,45 +41,6 @@ public class InvoiceItem {
     private BigDecimal vlAbatNt;
 
 
-    /**
-     * Construtor da classe InvoiceItem.
-     * @param codItem Código do item
-     * @param descrCompl Descrição complementar
-     * @param quant Quantidade
-     * @param unid Unidade
-     * @param vlItem Valor do item
-     * @param vlDesc Valor do desconto
-     * @param indMov Indicador de movimentação
-     * @param cstIcms Código de situação tributária do ICMS
-     * @param cfop Código fiscal de operação e prestação
-     * @param codNat Código da natureza da operação
-     * @param vlBcIcms Valor da base de cálculo do ICMS
-     * @param alqIcms Alíquota do ICMS
-     * @param vlIcms Valor do ICMS
-     * @param vlBcIcmsSt Valor da base de cálculo do ICMS substituição tributária
-     * @param alqIcmsSt Alíquota do ICMS substituição tributária
-     * @param vlIcmsSt Valor do ICMS substituição tributária
-     * @param indApur Indicador de apuração do ICMS
-     * @param cstIpi Código de situação tributária do IPI
-     * @param codEnq Código de enquadramento do IPI
-     * @param vlBcIpi Valor da base de cálculo do IPI
-     * @param aliqIpi Alíquota do IPI
-     * @param vlIpi Valor do IPI
-     * @param cstPis Código de situação tributária do PIS
-     * @param vlBcPis Valor da base de cálculo do PIS
-     * @param aliqPisPercetual Alíquota do PIS percentual
-     * @param quantBcPis Quantidade da base de cálculo do PIS
-     * @param aliqPis Alíquota do PIS
-     * @param vlPis Valor do PIS
-     * @param cstCofins Código de situação tributária do COFINS
-     * @param vlBcCofins Valor da base de cálculo do COFINS
-     * @param aliqCofinsPercetual Alíquota do COFINS percentual
-     * @param quantBcCofins Quantidade da base de cálculo do COFINS
-     * @param aliqCofins Alíquota do COFINS
-     * @param vlCofins Valor do COFINS
-     * @param codCta Código da conta analítica contábil
-     * @param vlAbatNt Valor do abatimento não tributado
-     */
     public InvoiceItem(
             String codItem, String descrCompl, String quant, int unid, BigDecimal vlItem,
             BigDecimal vlDesc, String indMov, String cstIcms, String cfop, String codNat,

@@ -18,29 +18,18 @@ import java.util.function.BiFunction;
 import static org.fastsped.commons.enums.Index.CONTENT;
 import static org.fastsped.commons.enums.Index.NOT_CONTENT;
 
-/**
- * Classe responsável pela geração dos registros do bloco C do EFD ICMS IPI.
- * Implementa a interface {@link RegisterFactory} para definir métodos de geração de registros e controle de quantidades.
- */
 public class CRegisters implements RegisterFactory {
 
     private final EfdIcmsIpi efdIcmsIpi;
     private int quantity;
     private final Map<String, Integer> quantityPerRegister;
 
-    /**
-     * Construtor que inicializa a classe com uma instância de {@link EfdIcmsIpi} e os contadores de quantidade de registros.
-     *
-     * @param efdIcmsIpi Instância de {@link EfdIcmsIpi} contendo os dados necessários para geração dos registros.
-     */
     public CRegisters(EfdIcmsIpi efdIcmsIpi) {
         this.efdIcmsIpi = efdIcmsIpi;
         this.quantity = 0;
         this.quantityPerRegister = new HashMap<>();
     }
-    /**
-     * {@inheritDoc}
-     * */
+
     @Override
     public String getRegisters(String[] registers) {
         List<Invoice> invoices = this.efdIcmsIpi.getInvoices();
@@ -53,12 +42,6 @@ public class CRegisters implements RegisterFactory {
         return registersGenerated.toString();
     }
 
-    /**
-     * Gera o registro C001 com base no índice indicando se o bloco está vazio ou não.
-     *
-     * @param blockIsEmpty Indica se o bloco está vazio (true) ou não (false).
-     * @return Uma string contendo o registro C001 gerado.
-     */
     private String generateRegisterC001(boolean blockIsEmpty) {
         Index index = blockIsEmpty ? NOT_CONTENT : CONTENT;
         Register register = new RegisterC001(index);
@@ -86,12 +69,6 @@ public class CRegisters implements RegisterFactory {
         }
     }
 
-    /**
-     * Gera o registro C100 para uma fatura (Invoice) específica.
-     *
-     * @param invoice Fatura (Invoice) para a qual o registro C100 será gerado.
-     * @return Uma string contendo o registro C100 gerado.
-     */
     private String generateRegisterC100(Invoice invoice) {
         Register register = new RegisterC100(invoice);
         this.addLineInQuantity(register);
@@ -99,13 +76,6 @@ public class CRegisters implements RegisterFactory {
         return RegisterUtil.generateRegister(register);
     }
 
-    /**
-     * Gera o registro C170 para um item específico de uma fatura (Invoice).
-     *
-     * @param item Item da fatura (InvoiceItem) para o qual o registro C170 será gerado.
-     * @param numItem Número do item na fatura.
-     * @return Uma string contendo o registro C170 gerado.
-     */
     private String generateRegisterC170(InvoiceItem item, int numItem) {
         Register register = new RegisterC170(item, numItem);
         this.addLineInQuantity(register);
@@ -113,12 +83,6 @@ public class CRegisters implements RegisterFactory {
         return RegisterUtil.generateRegister(register);
     }
 
-    /**
-     * Gera o registro C190 para um item específico de uma fatura (Invoice).
-     *
-     * @param item Item da fatura (InvoiceItem) para o qual o registro C170 será gerado.
-     * @return Uma string contendo o registro C190 gerado.
-     */
     private String generateRegisterC190(RegC190Data item) {
         Register register = new RegisterC190(item);
         this.addLineInQuantity(register);
@@ -153,18 +117,10 @@ public class CRegisters implements RegisterFactory {
         };
     }
 
-    /**
-     * Adiciona o número de linhas geradas por um registro ao total de registros deste bloco.
-     *
-     * @param register Registro para o qual o número de linhas geradas será adicionado.
-     */
     private void addLineInQuantity(Register register) {
         this.quantity += register.getQuantityLines();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public Map<String, Integer> getQuantityPerRegister() {
         return this.quantityPerRegister;

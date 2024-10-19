@@ -1,8 +1,5 @@
 package org.fastsped.model.data;
 
-/**
- * Representa informações complementares da empresa.
- */
 public class CompanyComplement {
     private String fantasia;
     private String cep;
@@ -14,18 +11,6 @@ public class CompanyComplement {
     private String fax;
     private String email;
 
-    /**
-     * Construtor que inicializa um objeto `CompanyComplement` com os dados fornecidos.
-     * @param fantasia Nome fantasia da empresa.
-     * @param cep CEP do endereço da empresa.
-     * @param end Endereço da empresa.
-     * @param num Número do endereço da empresa.
-     * @param compl Complemento do endereço da empresa.
-     * @param bairro Bairro do endereço da empresa.
-     * @param fone Telefone da empresa.
-     * @param fax Fax da empresa.
-     * @param email Email da empresa.
-     */
     public CompanyComplement(String fantasia, String cep, String end, String num, String compl, String bairro, String fone, String fax, String email) {
         this.fantasia = fantasia;
         this.cep = cep;
@@ -38,9 +23,6 @@ public class CompanyComplement {
         this.email = email;
     }
 
-    /**
-     * Construtor padrão de `CompanyComplement`.
-     */
     public CompanyComplement() {
     }
 

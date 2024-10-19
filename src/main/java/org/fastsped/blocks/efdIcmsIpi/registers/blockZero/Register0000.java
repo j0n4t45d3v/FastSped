@@ -6,10 +6,6 @@ import org.fastsped.model.EfdIcmsIpi;
 import org.fastsped.interfaces.Register;
 import org.fastsped.commons.BuilderRegister;
 
-/**
- * Implementação da interface {@link Register} para o registro 0000 do Bloco 0 do EFD ICMS IPI.
- * Este registro contém informações gerais de identificação e configuração do arquivo EFD ICMS IPI.
- */
 public class Register0000 implements Register {
 
     private String codVer;
@@ -27,12 +23,7 @@ public class Register0000 implements Register {
     private String indPerfil;
     private String indAtiv;
 
-    /**
-     * Construtor da classe {@code Register0000}.
-     *
-     * @param efdIcmsIpi Objeto {@link EfdIcmsIpi} contendo os dados de abertura do EFD ICMS IPI.
-     */
-    public Register0000(EfdIcmsIpi efdIcmsIpi) {
+        public Register0000(EfdIcmsIpi efdIcmsIpi) {
         this.codVer = efdIcmsIpi.getOpeningEfd().getCodVer();
         this.codFin = efdIcmsIpi.getOpeningEfd().getCodFin();
         this.dtIni = efdIcmsIpi.getOpeningEfd().getDtIni();
@@ -49,9 +40,6 @@ public class Register0000 implements Register {
         this.indAtiv = efdIcmsIpi.getOpeningEfd().getIndAtiv();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public String generateRegister() {
         if(this.cnpj == null && this.cpf == null){
@@ -73,9 +61,6 @@ public class Register0000 implements Register {
                 .build();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public int getQuantityLines() {
         return 1;

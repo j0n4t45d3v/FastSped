@@ -1,10 +1,19 @@
 package org.fastsped.model.data;
 
 import java.math.BigDecimal;
-
-/**
- * Representa os produtos presentes no EFD Fiscal
- */
+/*tipoItem Tipo do Item;
+* <li>00 – Mercadoria para Revenda;</li>
+ *  <li>01 – Matéria-prima;</li>
+ *  <li>02 – Embalagem;</li>
+ *  <li>03 – Produto em Processo;</li>
+ *  <li>04 – Produto Acabado;</li>
+ *  <li>05 – Subproduto;</li>
+ *  <li>06 – Produto Intermediário;</li>
+ *  <li>07 – Material de Uso e Consumo;</li>
+ *  <li>08 – Ativo Imobilizado;</li>
+ *  <li>09 – Serviços;</li>
+ *  <li>10 – Outros insumos;</li>
+ *  <li>99 – Outras</li>*/
 public class Product {
 
     private String codItem;
@@ -20,39 +29,7 @@ public class Product {
     private BigDecimal aliqIcms;
     private String cest;
 
-    /**
-     * Constrói uma instância do {@code Produtos} com os dados fornecidos.
-     *
-     * @param codItem Código do produto ou serviço
-     * @param descrItem Descrição do Item
-     * @param codBarra Código de barras do produto
-     * @param codAntItem Código anterior do item
-     * @param unidInv Código da unidade de medida tem relação com o campo {@code codUnid}
-     * da classe {@link org.fastsped.model.data.Unit}
-     * @param tipoItem Tipo do Item;
-     * <p>valores validos: </p>
-     * <ul>
-     *  <li>00 – Mercadoria para Revenda;</li>
-     *  <li>01 – Matéria-prima;</li>
-     *  <li>02 – Embalagem;</li>
-     *  <li>03 – Produto em Processo;</li>
-     *  <li>04 – Produto Acabado;</li>
-     *  <li>05 – Subproduto;</li>
-     *  <li>06 – Produto Intermediário;</li>
-     *  <li>07 – Material de Uso e Consumo;</li>
-     *  <li>08 – Ativo Imobilizado;</li>
-     *  <li>09 – Serviços;</li>
-     *  <li>10 – Outros insumos;</li>
-     *  <li>99 – Outras</li>
-     *</ul>
-     *
-     * @param codNcm Código do ncm
-     * @param exIpi Código Ex
-     * @param codGen Código do gênero do item
-     * @param codLst Código do serviço
-     * @param aliqIcms Aliquota icms
-     * @param cest Código Cest
-     */
+
     public Product(
             String codItem, String descrItem, String codBarra, String codAntItem,
             String unidInv, String tipoItem, String codNcm, String exIpi, String codGen,
@@ -72,10 +49,7 @@ public class Product {
         this.cest = cest;
     }
 
-    /**
-     * Contrutor padrão da classe Produtos
-     */
-    public Product() {
+        public Product() {
     }
 
     public String getCodItem() {
