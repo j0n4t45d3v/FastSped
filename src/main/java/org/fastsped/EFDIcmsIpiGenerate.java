@@ -1,6 +1,6 @@
 package org.fastsped;
 
-import org.fastsped.blocks.efdIcmsIpi.*;
+import org.fastsped.efdIcmsIpi.*;
 import org.fastsped.interfaces.Block;
 import org.fastsped.interfaces.GenerateEfd;
 import org.fastsped.model.EfdIcmsIpi;
